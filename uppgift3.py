@@ -1,15 +1,61 @@
-def uppgift3():
-    teamA = input("Hur många mål gjorde Tottenham? ")
-    teamA = int(teamA)
-    
-    teamB = input("Hur många mål gjorde Liverpool? ")
-    teamB = int(teamB)
-    
-    if teamA > teamB:
-        goal_difference = teamA - teamB
-        print(f"Tottenham vann matchen ({teamA} - {teamB}) med {goal_difference} mål! ")
-    elif teamB > teamA:
-        goal_difference = teamB - teamA
-        print(f"Liverpool vann matchen med ({teamB} - {teamA}) med {goal_difference} mål!")
+def uppgift3_version1():
+    print("Välkommen till Kvittokompis! Avsluta genom att skriva: quit")
+
+    total = 0
+
+    while True:
+        value = input("Skriv in ett belopp: ")
+
+        if value == "quit" or value == "avsluta":
+            break
+
+        total += int(value)
+
+    print("Det blir " + str(total) + " kr totalt. Välkommen åter!")
+
+
+def uppgift3_version2():
+    print("Välkommen till Kvittokompis! Avsluta genom att skriva: quit")
+
+    total = 0
+
+    while True:
+        value = input("Skriv in ett belopp: ")
+
+        if value == "quit" or value == "avsluta":
+            break
+
+        total += int(value)
+
+    people = int(input("Hur många är ni? "))
+    per_person = total / people
+
+    print("Det blir " + str(total) + " kr totalt, alltså " + str(per_person) + " kr per person. Välkommen åter!")
+
+
+def uppgift3_version3():
+    print("Välkommen till Kvittokompis! Avsluta genom att skriva: quit")
+
+    total = 0
+
+    while True:
+        value = input("Skriv in ett belopp: ")
+
+        if value == "quit" or value == "avsluta":
+            break
+
+        total += int(value)
+
+    people = int(input("Hur många är ni? "))
+
+    tip_input = input("Hur många procent dricks vill ni lägga på? ")
+
+    if tip_input == "":
+        tip_percent = 10
     else:
-        print("Matchen slutade oavgjort!")
+        tip_percent = int(tip_input)
+
+    total_with_tip = total + total * tip_percent / 100
+    per_person = total_with_tip / people
+
+    print("Det blir " + str(total_with_tip) + " kr totalt, alltså " + str(per_person) + " kr per person. Välkommen åter!")
